@@ -83,6 +83,11 @@ function roundComplete () {
     console.log("Loss count: " + lossCount);
     console.log("Guesses left: " + guessesLeft);
 
+    // Finally, update the HTML to reflect most recent count stats
+    document.getElementById("numGuesses").innerHTML = guessesLeft;
+    document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(' ');
+    document.getElementById("wrongGuesses").innerHTML = wrongLetters.join(' ');
+
 
     // Check if user won
     if(lettersInWord.toString() == blanksAndSuccesses.toString()) {
